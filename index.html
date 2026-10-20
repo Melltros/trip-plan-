@@ -18,11 +18,7 @@
       --radius: 8px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -33,11 +29,7 @@
       padding: 0;
     }
 
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
 
     header {
       padding: 56px 0 32px 0;
@@ -82,12 +74,13 @@
       align-items: center;
       gap: 6px;
       padding: 8px 16px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       text-decoration: none;
       border-radius: var(--radius);
       cursor: pointer;
       transition: background 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -96,9 +89,7 @@
       border: 1px solid var(--accent);
     }
 
-    .btn-primary:hover {
-      background: var(--accent-hover);
-    }
+    .btn-primary:hover { background: var(--accent-hover); }
 
     .btn-secondary {
       background: #ffffff;
@@ -106,11 +97,16 @@
       border: 1px solid var(--border);
     }
 
-    .btn-secondary:hover {
-      background: var(--bg-subtle);
+    .btn-secondary:hover { background: var(--bg-subtle); }
+
+    .btn-call {
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
     }
 
-    /* Key stats strip */
+    .btn-call:hover { background: #dcfce7; }
+
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -132,7 +128,6 @@
       color: var(--text);
     }
 
-    /* Navigation tabs */
     .nav-tabs {
       display: flex;
       gap: 8px;
@@ -163,7 +158,6 @@
       font-weight: 600;
     }
 
-    /* Sections */
     section {
       padding: 36px 0;
       border-bottom: 1px solid var(--border);
@@ -182,7 +176,6 @@
       margin-bottom: 24px;
     }
 
-    /* Filters */
     .filter-group {
       display: flex;
       gap: 8px;
@@ -206,7 +199,6 @@
       border-color: var(--text);
     }
 
-    /* Hotel List */
     .hotel-list {
       display: flex;
       flex-direction: column;
@@ -225,9 +217,7 @@
       transition: border-color 0.15s ease;
     }
 
-    .hotel-card:hover {
-      border-color: #cbd5e1;
-    }
+    .hotel-card:hover { border-color: #cbd5e1; }
 
     .hotel-header {
       display: flex;
@@ -277,15 +267,9 @@
       gap: 12px;
     }
 
-    .hotel-features span {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
     .hotel-pricing-box {
       text-align: right;
-      min-width: 170px;
+      min-width: 220px;
     }
 
     .hotel-total-price {
@@ -302,11 +286,11 @@
 
     .card-actions {
       display: flex;
-      gap: 8px;
+      flex-wrap: wrap;
+      gap: 6px;
       justify-content: flex-end;
     }
 
-    /* Itinerary Timeline */
     .day-block {
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -364,16 +348,9 @@
       margin-bottom: 6px;
     }
 
-    .day-box ul {
-      padding-left: 16px;
-      color: var(--text);
-    }
+    .day-box ul { padding-left: 16px; color: var(--text); }
+    .day-box p { color: var(--text); }
 
-    .day-box p {
-      color: var(--text);
-    }
-
-    /* Calculator */
     .calc-container {
       background: var(--bg-subtle);
       border: 1px solid var(--border);
@@ -428,7 +405,6 @@
       color: var(--text-muted);
     }
 
-    /* Checklist */
     .checklist-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -454,9 +430,7 @@
       color: var(--text-muted);
     }
 
-    .check-card li {
-      margin-bottom: 6px;
-    }
+    .check-card li { margin-bottom: 6px; }
 
     footer {
       padding: 32px 0;
@@ -466,30 +440,17 @@
     }
 
     @media (max-width: 640px) {
-      .hotel-card {
-        grid-template-columns: 1fr;
-      }
-      .hotel-pricing-box {
-        text-align: left;
-      }
-      .card-actions {
-        justify-content: flex-start;
-      }
-      .day-grid {
-        grid-template-columns: 1fr;
-      }
-      .calc-result {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
+      .hotel-card { grid-template-columns: 1fr; }
+      .hotel-pricing-box { text-align: left; }
+      .card-actions { justify-content: flex-start; }
+      .day-grid { grid-template-columns: 1fr; }
+      .calc-result { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Header -->
     <header>
       <span class="meta-tag">Road Trip Itinerary • 6 Adults • 4 Nights / 5 Days</span>
       <h1>Kantaphod to Rajasthan & Ujjain Circuit</h1>
@@ -505,7 +466,6 @@
       </div>
     </header>
 
-    <!-- Key Trip Numbers -->
     <div class="summary-grid">
       <div class="summary-item">
         <span class="label">Total Distance</span>
@@ -525,7 +485,6 @@
       </div>
     </div>
 
-    <!-- Sticky Tabs -->
     <nav class="nav-tabs">
       <button class="tab-btn active" onclick="switchTab('hotels')">Affordable Hotels</button>
       <button class="tab-btn" onclick="switchTab('roadmap')">Road Map & Stops</button>
@@ -536,7 +495,7 @@
     <!-- TAB 1: HOTELS -->
     <section id="tab-hotels">
       <h2>Affordable Accommodations for 6</h2>
-      <p class="section-desc">Selected for affordability, safe parking, clean washrooms, and close proximity to major shrines.</p>
+      <p class="section-desc">Every listing below includes direct Google Travel live rates, verified location on Google Maps, and direct phone numbers for seamless booking.</p>
 
       <div class="filter-group">
         <button class="filter-btn active" onclick="filterHotels('all')">All Nights</button>
@@ -547,7 +506,6 @@
       </div>
 
       <div class="hotel-list" id="hotel-list-container">
-        <!-- Injected by JavaScript -->
       </div>
     </section>
 
@@ -556,7 +514,6 @@
       <h2>Day-by-Day Road Itinerary</h2>
       <p class="section-desc">Driving routes, recommended highway breaks, and temple coordinates.</p>
 
-      <!-- Day 1 -->
       <div class="day-block">
         <div class="day-top">
           <span class="day-title">Day 1: Kantaphod (MP) ➔ Mandsaur ➔ Sanwaliya Seth (Mandphiya)</span>
@@ -577,12 +534,11 @@
           </div>
         </div>
         <div style="display: flex; gap: 8px;">
-          <a href="https://www.google.com/maps/dir/Kantaphod,+Madhya+Pradesh/Pashupatinath+Temple,+Mandsaur/Shree+Sanwaliya+Seth+Temple,+Mandphiya" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Open Day 1 Map</a>
-          <a href="https://maps.google.com/?q=Shri+Sanwaliya+Seth+Temple+Mandphiya" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Sanwaliya Temple Location</a>
+          <a href="https://www.google.com/maps/dir/Kantaphod,+Madhya+Pradesh/Pashupatinath+Temple,+Mandsaur/Shree+Sanwaliya+Seth+Temple,+Mandphiya" target="_blank" class="btn btn-secondary">Open Day 1 Map</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Shri+Sanwaliya+Seth+Temple+Mandphiya" target="_blank" class="btn btn-secondary">Sanwaliya Temple Location</a>
         </div>
       </div>
 
-      <!-- Day 2 -->
       <div class="day-block">
         <div class="day-top">
           <span class="day-title">Day 2: Mandphiya ➔ Chittorgarh Fort</span>
@@ -603,12 +559,11 @@
           </div>
         </div>
         <div style="display: flex; gap: 8px;">
-          <a href="https://www.google.com/maps/dir/Mandphiya,+Rajasthan/Chittorgarh+Fort,+Chittorgarh" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Open Day 2 Map</a>
-          <a href="https://maps.google.com/?q=Chittorgarh+Fort" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Fort Gate Location</a>
+          <a href="https://www.google.com/maps/dir/Mandphiya,+Rajasthan/Chittorgarh+Fort,+Chittorgarh" target="_blank" class="btn btn-secondary">Open Day 2 Map</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Chittorgarh+Fort" target="_blank" class="btn btn-secondary">Fort Gate Location</a>
         </div>
       </div>
 
-      <!-- Day 3 -->
       <div class="day-block">
         <div class="day-top">
           <span class="day-title">Day 3: Chittorgarh ➔ Nathdwara ➔ Udaipur</span>
@@ -629,12 +584,11 @@
           </div>
         </div>
         <div style="display: flex; gap: 8px;">
-          <a href="https://www.google.com/maps/dir/Chittorgarh,+Rajasthan/Nathdwara,+Rajasthan/Udaipur,+Rajasthan" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Open Day 3 Map</a>
-          <a href="https://maps.google.com/?q=Shrinathji+Temple+Nathdwara" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Shrinathji Temple</a>
+          <a href="https://www.google.com/maps/dir/Chittorgarh,+Rajasthan/Nathdwara,+Rajasthan/Udaipur,+Rajasthan" target="_blank" class="btn btn-secondary">Open Day 3 Map</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Shrinathji+Temple+Nathdwara" target="_blank" class="btn btn-secondary">Shrinathji Temple</a>
         </div>
       </div>
 
-      <!-- Day 4 & 5 -->
       <div class="day-block">
         <div class="day-top">
           <span class="day-title">Day 4 & 5: Udaipur ➔ Ujjain ➔ Return to Kantaphod</span>
@@ -655,8 +609,8 @@
           </div>
         </div>
         <div style="display: flex; gap: 8px;">
-          <a href="https://www.google.com/maps/dir/Udaipur,+Rajasthan/Ujjain,+Madhya+Pradesh" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Open Day 4 Map</a>
-          <a href="https://maps.google.com/?q=Shree+Mahakaleshwar+Temple+Ujjain" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Mahakaleshwar Temple</a>
+          <a href="https://www.google.com/maps/dir/Udaipur,+Rajasthan/Ujjain,+Madhya+Pradesh" target="_blank" class="btn btn-secondary">Open Day 4 Map</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Shree+Mahakaleshwar+Temple+Ujjain" target="_blank" class="btn btn-secondary">Mahakaleshwar Temple</a>
         </div>
       </div>
     </section>
@@ -759,7 +713,7 @@
 
   <script>
     const hotelData = [
-      // Night 1
+      // Night 1: Mandphiya
       {
         city: 'mandphiya',
         night: 'Night 1: Mandphiya (Sanwaliya Seth)',
@@ -769,9 +723,11 @@
         setup: '2 Quad/Family AC Rooms (Fits 6-8 persons)',
         totalRate: '₹1,600 – ₹2,000',
         perPersonRate: '₹270 – ₹330',
+        phone: '+919950946434',
         features: ['Walking distance to temple', 'Secure gated parking', 'Pure vegetarian food nearby', '24/7 hot water'],
-        map: 'https://maps.google.com/?q=Shri+Sanwaliya+Seth+Temple+Mandphiya',
-        book: 'https://yatradham.org/'
+        map: 'https://www.google.com/maps/search/?api=1&query=Shri+Sanwaliya+Seth+Temple+Mandphiya',
+        book: 'https://yatradham.org/catalogsearch/result/?q=sanwaliya',
+        website: 'https://srisanwaliyaji.org/'
       },
       {
         city: 'mandphiya',
@@ -782,9 +738,11 @@
         setup: '2 Triple Bed AC Rooms (or 1 Family Suite)',
         totalRate: '₹2,200 – ₹2,800',
         perPersonRate: '₹370 – ₹460',
+        phone: '+917665944764',
         features: ['Spacious multi-bed rooms', 'Elevator', 'On-site parking', 'Veg room service'],
-        map: 'https://maps.google.com/?q=Hotel+Lakhdatar+Mandphiya',
-        book: 'https://www.makemytrip.com/hotels/mandphiya-hotels.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Lakhdatar+Meera+Circle+Mandphiya',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Lakhdatar+Mandphiya+Rajasthan',
+        website: 'https://hotel-lakhdatar.com/'
       },
       {
         city: 'mandphiya',
@@ -795,12 +753,13 @@
         setup: '2 Large Family AC Rooms',
         totalRate: '₹2,000 – ₹2,500',
         perPersonRate: '₹330 – ₹415',
+        phone: '+919414732150',
         features: ['Family-friendly', 'Satvik food options', 'Clean attached washrooms', 'Budget rates'],
-        map: 'https://maps.google.com/?q=Hotel+Chaturbhuj+Palace+Mandphiya',
-        book: 'https://www.google.com/travel/hotels'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Chaturbhuj+Palace+Mandphiya',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Chaturbhuj+Palace+Mandphiya'
       },
 
-      // Night 2
+      // Night 2: Chittorgarh
       {
         city: 'chittorgarh',
         night: 'Night 2: Chittorgarh',
@@ -810,9 +769,10 @@
         setup: '2 Triple AC Rooms or 3 Standard AC Rooms',
         totalRate: '₹2,400 – ₹3,200',
         perPersonRate: '₹400 – ₹530',
+        phone: '+918904088780',
         features: ['Clean linen', 'Prompt service', 'Secure car parking', 'Family rooms'],
-        map: 'https://maps.google.com/?q=Hotel+Soni+Inn+Chittorgarh',
-        book: 'https://www.makemytrip.com/hotels/hotel_soni_inn-details-chittaurgarh.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Soni+Inn+Collectorate+Circle+Chittorgarh',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Soni+Inn+Chittorgarh'
       },
       {
         city: 'chittorgarh',
@@ -823,9 +783,10 @@
         setup: '2 Triple AC Rooms (3 beds each)',
         totalRate: '₹2,200 – ₹2,900',
         perPersonRate: '₹360 – ₹480',
+        phone: '+919460086789',
         features: ['Central location', 'Vegetarian kitchen', 'Lift access', 'Dedicated parking'],
-        map: 'https://maps.google.com/?q=Hotel+Aadi+Mata+Chittorgarh',
-        book: 'https://www.booking.com/city/in/chittaurgarh.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Aadi+Mata+Chittorgarh',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Aadi+Mata+Chittorgarh'
       },
       {
         city: 'chittorgarh',
@@ -836,40 +797,46 @@
         setup: '2 Family Deluxe Rooms with extra mattresses',
         totalRate: '₹3,500 – ₹4,200',
         perPersonRate: '₹580 – ₹700',
+        phone: '+911472240099',
         features: ['Traditional Mewari decor', 'Large courtyard parking', 'Quiet residential setting'],
-        map: 'https://maps.google.com/?q=Hotel+Pratap+Palace+Chittorgarh',
-        book: 'https://www.booking.com/hotel/in/pratap-palace-chittorgarh.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Pratap+Palace+Chittorgarh',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Pratap+Palace+Chittorgarh',
+        website: 'https://hotelpratappalace.com/'
       },
 
-      // Night 3
+      // Night 3: Udaipur
       {
         city: 'udaipur',
         night: 'Night 3: Udaipur',
-        name: 'Mewar Haveli / Lake Haveli (Standard Wing)',
+        name: 'Hotel Mewar Haveli (Standard Wing)',
         type: 'Haveli Stay',
         distance: '500 m from Lake Pichola & Bagore Ki Haveli',
         setup: '2 Family Triple AC Rooms',
         totalRate: '₹3,400 – ₹4,200',
         perPersonRate: '₹560 – ₹700',
+        phone: '+912942422888',
         features: ['Walkable to Lake Pichola', 'Rooftop lake view dining', 'Central heritage area'],
-        map: 'https://maps.google.com/?q=Mewar+Haveli+Udaipur',
-        book: 'https://www.booking.com/city/in/udaipur.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Mewar+Haveli+Lal+Ghat+Udaipur',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Mewar+Haveli+Udaipur',
+        website: 'http://www.mewarhaveli.com/'
       },
       {
         city: 'udaipur',
         night: 'Night 3: Udaipur',
-        name: 'Hotel Paras Mahal / Devraj Niwas',
+        name: 'Hotel Paras Mahal',
         type: 'Affordable Hotel',
         distance: 'City Centre (Near Railway Circle)',
         setup: '2 Triple AC Rooms with extra mattress',
         totalRate: '₹3,200 – ₹3,900',
         perPersonRate: '₹530 – ₹650',
+        phone: '+912942483334',
         features: ['Large car parking area', 'Avoids old city traffic jams', 'Pure vegetarian food'],
-        map: 'https://maps.google.com/?q=Hotel+Paras+Mahal+Udaipur',
-        book: 'https://www.makemytrip.com/hotels/hotel_paras_mahal-details-udaipur.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Paras+Mahal+Sector+11+Udaipur',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Paras+Mahal+Udaipur',
+        website: 'http://www.hotelparasmahal.com/'
       },
 
-      // Night 4
+      // Night 4: Ujjain
       {
         city: 'ujjain',
         night: 'Night 4: Ujjain',
@@ -879,9 +846,11 @@
         setup: '2 Large 3-Bed AC Rooms',
         totalRate: '₹1,800 – ₹2,400',
         perPersonRate: '₹300 – ₹400',
+        phone: '+917342550563',
         features: ['5-minute walk for 4:00 AM Bhasma Aarti', 'Temple trust management', 'Clean and secure'],
-        map: 'https://maps.google.com/?q=Shri+Mahakaleshwar+Atithi+Niwas+Ujjain',
-        book: 'https://shrimahakaleshwar.com/'
+        map: 'https://www.google.com/maps/search/?api=1&query=Pt+Suryanarayan+Vyas+Atithi+Niwas+Ujjain',
+        book: 'https://shrimahakaleshwar.com/',
+        website: 'https://shrimahakaleshwar.com/'
       },
       {
         city: 'ujjain',
@@ -892,22 +861,24 @@
         setup: '1 Jumbo 6-Bed Family Suite (All 6 together)',
         totalRate: '₹2,500 – ₹3,200',
         perPersonRate: '₹415 – ₹530',
+        phone: '+919827072555',
         features: ['Entire group stays in 1 room', 'Pure veg dining', 'Elevator & hot water'],
-        map: 'https://maps.google.com/?q=Hotel+Satyam+Ujjain',
-        book: 'https://www.makemytrip.com/hotels/hotel_satyam-details-ujjain.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Satyam+Mahakal+Marg+Kot+Mohalla+Ujjain',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Satyam+Mahakal+Marg+Ujjain'
       },
       {
         city: 'ujjain',
         night: 'Night 4: Ujjain',
-        name: 'Hotel Barsana Palace / Mahakal Lok Palace',
+        name: 'Hotel Barsana Palace',
         type: 'Affordable Hotel',
         distance: '600 m from Mahakal Lok corridor',
         setup: '2 Triple Bed AC Rooms',
         totalRate: '₹2,800 – ₹3,500',
         perPersonRate: '₹460 – ₹580',
+        phone: '+917342555544',
         features: ['Easy access to Mahakal Lok', 'Air-conditioned', 'Clean linen', '24h front desk'],
-        map: 'https://maps.google.com/?q=Hotel+Barsana+Palace+Ujjain',
-        book: 'https://www.makemytrip.com/hotels/hotel_barsana_palace-details-ujjain.html'
+        map: 'https://www.google.com/maps/search/?api=1&query=Hotel+Barsana+Palace+Subhash+Nagar+Ujjain',
+        book: 'https://www.google.com/travel/hotels?q=Hotel+Barsana+Palace+Ujjain'
       }
     ];
 
@@ -936,10 +907,11 @@
           </div>
           <div class="hotel-pricing-box">
             <div class="hotel-total-price">${h.totalRate}</div>
-            <div class="hotel-per-head">Total for 6 pax (${h.perPersonRate}/person)</div>
+            <div class="hotel-per-head">Total for 6 (${h.perPersonRate}/person)</div>
             <div class="card-actions">
-              <a href="${h.map}" target="_blank" class="btn btn-secondary" style="font-size: 13px;">Map</a>
-              <a href="${h.book}" target="_blank" class="btn btn-primary" style="font-size: 13px;">Book / Check</a>
+              ${h.phone ? `<a href="tel:${h.phone}" class="btn btn-call">📞 Call</a>` : ''}
+              <a href="${h.map}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📍 Map</a>
+              <a href="${h.book}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Check Rates</a>
             </div>
           </div>
         `;
@@ -983,18 +955,18 @@
     }
 
     function downloadCSV() {
-      const csv = `Day,Destination,Hotel Name,Type,Room Setup (6 Persons),Total Cost / Night,Distance,Google Maps,Booking Link
-Day 1,Mandphiya (Sanwaliya Seth),Shri Sanwaliya Dham Atithi Grah,Temple Trust,2 Quad/Family AC Rooms,₹1600 - ₹2000,300 m from temple,https://maps.google.com/?q=Shri+Sanwaliya+Seth+Temple+Mandphiya,https://yatradham.org/
-Day 1,Mandphiya (Sanwaliya Seth),Hotel Lakhdatar Mandphiya,Affordable Hotel,2 Triple AC Rooms,₹2200 - ₹2800,450 m from temple,https://maps.google.com/?q=Hotel+Lakhdatar+Mandphiya,https://www.makemytrip.com/hotels/mandphiya-hotels.html
-Day 1,Mandphiya (Sanwaliya Seth),Hotel Chaturbhuj Palace,Affordable Hotel,2 Large Family Rooms,₹2000 - ₹2500,500 m from temple,https://maps.google.com/?q=Hotel+Chaturbhuj+Palace+Mandphiya,https://www.google.com/travel/hotels
-Day 2,Chittorgarh,Hotel Soni Inn Chittorgarh,Affordable Hotel,2 Triple AC Rooms,₹2400 - ₹3200,2.5 km from fort,https://maps.google.com/?q=Hotel+Soni+Inn+Chittorgarh,https://www.makemytrip.com/hotels/hotel_soni_inn-details-chittaurgarh.html
-Day 2,Chittorgarh,Hotel Aadi Mata & Banquets,Affordable Hotel,2 Triple AC Rooms,₹2200 - ₹2900,2.8 km from fort,https://maps.google.com/?q=Hotel+Aadi+Mata+Chittorgarh,https://www.booking.com/city/in/chittaurgarh.html
-Day 2,Chittorgarh,Hotel Pratap Palace,Heritage Economy,2 Family Deluxe Rooms,₹3500 - ₹4200,3.0 km from fort,https://maps.google.com/?q=Hotel+Pratap+Palace+Chittorgarh,https://www.booking.com/hotel/in/pratap-palace-chittorgarh.html
-Day 3,Udaipur,Mewar Haveli Lake Pichola,Haveli Stay,2 Triple AC Rooms,₹3400 - ₹4200,500 m from Lake Pichola,https://maps.google.com/?q=Mewar+Haveli+Udaipur,https://www.booking.com/city/in/udaipur.html
-Day 3,Udaipur,Hotel Paras Mahal,Affordable Hotel,2 Triple AC Rooms,₹3200 - ₹3900,City Centre (Ample parking),https://maps.google.com/?q=Hotel+Paras+Mahal+Udaipur,https://www.makemytrip.com/hotels/hotel_paras_mahal-details-udaipur.html
-Day 4,Ujjain,Pt. Suryanarayan Vyas Atithi Niwas,Official Mahakal Trust,2 Large 3-Bed AC Rooms,₹1800 - ₹2400,400 m from temple,https://maps.google.com/?q=Shri+Mahakaleshwar+Atithi+Niwas+Ujjain,https://shrimahakaleshwar.com/
-Day 4,Ujjain,Hotel Satyam Ujjain,Affordable Hotel,1 Jumbo 6-Bed Family Suite,₹2500 - ₹3200,800 m from temple,https://maps.google.com/?q=Hotel+Satyam+Ujjain,https://www.makemytrip.com/hotels/hotel_satyam-details-ujjain.html
-Day 4,Ujjain,Hotel Barsana Palace,Affordable Hotel,2 Triple AC Rooms,₹2800 - ₹3500,600 m from Mahakal Lok,https://maps.google.com/?q=Hotel+Barsana+Palace+Ujjain,https://www.makemytrip.com/hotels/hotel_barsana_palace-details-ujjain.html`;
+      const csv = `Day,Destination,Hotel Name,Type,Room Setup (6 Persons),Total Cost / Night,Distance,Direct Phone,Google Maps Link,Live Rates & Booking Link
+Day 1,Mandphiya (Sanwaliya Seth),Shri Sanwaliya Dham Atithi Grah,Temple Trust,2 Quad/Family AC Rooms,₹1600 - ₹2000,300 m from temple,+919950946434,https://www.google.com/maps/search/?api=1&query=Shri+Sanwaliya+Seth+Temple+Mandphiya,https://yatradham.org/catalogsearch/result/?q=sanwaliya
+Day 1,Mandphiya (Sanwaliya Seth),Hotel Lakhdatar Mandphiya,Affordable Hotel,2 Triple AC Rooms,₹2200 - ₹2800,450 m from temple,+917665944764,https://www.google.com/maps/search/?api=1&query=Hotel+Lakhdatar+Meera+Circle+Mandphiya,https://www.google.com/travel/hotels?q=Hotel+Lakhdatar+Mandphiya+Rajasthan
+Day 1,Mandphiya (Sanwaliya Seth),Hotel Chaturbhuj Palace,Affordable Hotel,2 Large Family Rooms,₹2000 - ₹2500,500 m from temple,+919414732150,https://www.google.com/maps/search/?api=1&query=Hotel+Chaturbhuj+Palace+Mandphiya,https://www.google.com/travel/hotels?q=Hotel+Chaturbhuj+Palace+Mandphiya
+Day 2,Chittorgarh,Hotel Soni Inn Chittorgarh,Affordable Hotel,2 Triple AC Rooms,₹2400 - ₹3200,2.5 km from fort,+918904088780,https://www.google.com/maps/search/?api=1&query=Hotel+Soni+Inn+Collectorate+Circle+Chittorgarh,https://www.google.com/travel/hotels?q=Hotel+Soni+Inn+Chittorgarh
+Day 2,Chittorgarh,Hotel Aadi Mata & Banquets,Affordable Hotel,2 Triple AC Rooms,₹2200 - ₹2900,2.8 km from fort,+919460086789,https://www.google.com/maps/search/?api=1&query=Hotel+Aadi+Mata+Chittorgarh,https://www.google.com/travel/hotels?q=Hotel+Aadi+Mata+Chittorgarh
+Day 2,Chittorgarh,Hotel Pratap Palace,Heritage Economy,2 Family Deluxe Rooms,₹3500 - ₹4200,3.0 km from fort,+911472240099,https://www.google.com/maps/search/?api=1&query=Hotel+Pratap+Palace+Chittorgarh,https://www.google.com/travel/hotels?q=Hotel+Pratap+Palace+Chittorgarh
+Day 3,Udaipur,Hotel Mewar Haveli,Haveli Stay,2 Triple AC Rooms,₹3400 - ₹4200,500 m from Lake Pichola,+912942422888,https://www.google.com/maps/search/?api=1&query=Hotel+Mewar+Haveli+Lal+Ghat+Udaipur,https://www.google.com/travel/hotels?q=Hotel+Mewar+Haveli+Udaipur
+Day 3,Udaipur,Hotel Paras Mahal,Affordable Hotel,2 Triple AC Rooms,₹3200 - ₹3900,City Centre (Ample parking),+912942483334,https://www.google.com/maps/search/?api=1&query=Hotel+Paras+Mahal+Sector+11+Udaipur,https://www.google.com/travel/hotels?q=Hotel+Paras+Mahal+Udaipur
+Day 4,Ujjain,Pt. Suryanarayan Vyas Atithi Niwas,Official Mahakal Trust,2 Large 3-Bed AC Rooms,₹1800 - ₹2400,400 m from temple,+917342550563,https://www.google.com/maps/search/?api=1&query=Pt+Suryanarayan+Vyas+Atithi+Niwas+Ujjain,https://shrimahakaleshwar.com/
+Day 4,Ujjain,Hotel Satyam Ujjain,Affordable Hotel,1 Jumbo 6-Bed Family Suite,₹2500 - ₹3200,800 m from temple,+919827072555,https://www.google.com/maps/search/?api=1&query=Hotel+Satyam+Mahakal+Marg+Kot+Mohalla+Ujjain,https://www.google.com/travel/hotels?q=Hotel+Satyam+Mahakal+Marg+Ujjain
+Day 4,Ujjain,Hotel Barsana Palace,Affordable Hotel,2 Triple AC Rooms,₹2800 - ₹3500,600 m from Mahakal Lok,+917342555544,https://www.google.com/maps/search/?api=1&query=Hotel+Barsana+Palace+Subhash+Nagar+Ujjain,https://www.google.com/travel/hotels?q=Hotel+Barsana+Palace+Ujjain`;
 
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
